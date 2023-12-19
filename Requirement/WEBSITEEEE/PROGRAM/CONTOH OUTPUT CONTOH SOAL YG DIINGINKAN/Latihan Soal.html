@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Kelompok 4</title>
+    <link rel="stylesheet" href="style copy.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a class="logo" href="#">Derive<span>it</span></a>
+        <ul class="menu-links">
+          <span id="close-menu-btn" class="material-symbols-outlined">close</span>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Definisi.html">Definisi</a></li>
+          <li><a href="Teorema.html">Teorema</a></li>
+          <li><a href="#">Latihan Soal</a></li>
+          <li><a href="about us.html">About us</a></li>
+        </ul>
+        <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+      </nav>
+    </header>
+
+    <section class="hero-section">
+      <div class="content">
+        <h2>Latihan<span> Soal</span></h2>
+        <p>
+          Setelah kita belajar tentang definisi turunan dan teorema-teorema yang berlaku pada turunan, 
+          kita akan mencoba untuk menyelesaikan permasalahan berkaitan dengan turunan suatu fungsi. 
+          Latihan soal yang disediakan hanyalah latihan soal untuk melatih pemahaman prosedural. Jika ingin
+          melihat latihan soal penerapan silakan <span>sign in</span> dan pelajari terlebih dahulu bab penerapan. 
+        </p>
+        <div class="soal">
+          <p>Soal <span>1</span></p>
+          <p>Soal <span>2</span></p>
+          <p>Soal <span>3</span></p>
+        </div>
+        <div class="text-soal">
+          <p><img src="soal1.jpg"></p>
+          <p><img src="soal2.jpg"></p>
+          <p><img src="soal3.jpg"></p>
+        </div>
+        <div class="pembahasan">
+            <h2>Pembahasan<span> Soal</span></h2>
+            <button onclick="bahas()">Show</button>
+            <script src="bahas.js"></script>
+
+        </div>
+        <div id="ok" style="display: none;">
+          <div class="soal">
+            <p>Pembahasan <span>1</span></p>
+            <p>Pembahasan <span>2</span></p>
+            <p>Pembahasan <span>3</span></p>
+          </div>
+          <div class="text-soal">
+            <p><img src="jawab1.jpg"></p>
+            <p><img src="jawab2.jpg"></p>
+            <p><img src="jawab3.jpg"></p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <script>
+      const header = document.querySelector("header");
+      const hamburgerBtn = document.querySelector("#hamburger-btn");
+      const closeMenuBtn = document.querySelector("#close-menu-btn");
+
+      // Toggle mobile menu on hamburger button click
+      hamburgerBtn.addEventListener("click", () => header.classList.toggle("show-mobile-menu"));
+
+      // Close mobile menu on close button click
+      closeMenuBtn.addEventListener("click", () => hamburgerBtn.click());
+    </script>
+    
+  </body>
+</html>

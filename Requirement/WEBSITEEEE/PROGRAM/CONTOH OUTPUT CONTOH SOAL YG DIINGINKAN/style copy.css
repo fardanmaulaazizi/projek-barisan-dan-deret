@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+}
+
+header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 0px;
+  backdrop-filter: blur(5px);
+}
+
+.navbar .logo {
+  color: #fff;
+  font-weight: 600;
+  font-size: 2.1rem;
+  text-decoration: none;
+  margin-left: 60px;
+  margin-top: 12px;
+}
+
+.navbar .logo span {
+  color: #C06B3E;
+  font-size: 20px;
+}
+
+.navbar .menu-links {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+  margin-right: 55px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #C06B3E;
+}
+
+body{
+  height: 500px;
+}
+.hero-section {
+  background-image: url("back1.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.hero-section .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  color: #fff;
+  position: top;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.hero-section .content .soal{
+  display: flex;
+}
+.hero-section .content .soal p{
+  width: 400px;
+  height: auto;
+  text-align: center;
+  font-size: 30px;
+}
+
+.hero-section .content .text-soal{
+  display: flex;
+}
+.hero-section .content .text-soal p{
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  width: 400px;
+  height: auto;
+  text-align: justify;
+}
+
+.hero-section .content .pembahasan{
+  display: flex;
+}
+.hero-section .content .pembahasan h2{
+  padding-right: 20px;
+  padding-top: 25px;
+}
+.hero-section .content h2 {
+  font-size: 3rem;
+  max-width: 600px;
+  line-height: 70px;
+}
+
+.hero-section .content h2 span{
+    color: #C06B3E;
+    font-size: 3rem;
+}
+
+.hero-section .content p {
+  font-weight: 300;
+  max-width: 1200px;
+  margin-top: 15px;
+  text-align: justify;
+}
+.hero-section .content p span{
+  color: #C06B3E;
+}
+
+.hero-section .content button {
+  background: #fff;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-top: 40px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+  height: 40px;
+}
+
+.hero-section .content button:hover {
+  color: #fff;
+  background: #C06B3E;
+}
+
+#close-menu-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+#hamburger-btn {
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  header.show-mobile-menu::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+  }
+
+  .navbar .logo {
+    font-size: 1.7rem;
+    margin-left: 20px;
+  }
+
+    
+  #hamburger-btn, #close-menu-btn {
+    display: block;
+  }
+  #close-menu-btn {
+    color: wheat;
+  }
+  .navbar .menu-links {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 250px;
+    height: 100vh;
+    background: #0D241B;
+    flex-direction: column;
+    padding: 70px 40px 0;
+    transition: left 0.2s ease;
+    border: solid #C06B3E 1px;
+  }
+
+  header.show-mobile-menu .navbar .menu-links {
+    left: 0;
+  }
+
+  .navbar a {
+    color: wheat;
+  }
+
+  .hero-section .content {
+    text-align: left;
+    margin-left: 10px;
+  }
+
+  .hero-section .content :is(h2, p) {
+    max-width: 100%;
+  }
+
+  .hero-section .content h2 {
+    font-size: 2.3rem;
+    line-height: 60px;
+  }
+  .hero-section .content1 {
+    text-align: left;
+    margin-left: 10px;
+  }
+
+  .hero-section .content1 :is(h2, p) {
+    max-width: 100%;
+  }
+
+  .hero-section .content1 h2 {
+    font-size: 2.3rem;
+    line-height: 60px;
+  }
+
+  .hero-section .content button {
+    padding: 9px 18px;
+  }
+}

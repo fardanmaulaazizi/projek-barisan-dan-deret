@@ -1,0 +1,53 @@
+Project 3:
+- Buat website dengan 100% PHP untuk pembelajaran matematika (TK/SD/SMP/SMA/PT)
+- Minimal 10 halaman
+- Minimal 1 database dengan minimal 2 tabel
+- Minimal ada 2 javascript
+- layout wajib dg external CSS (buat semenarik mungkin)
+- masukkan elemen gambar, tabel, link download, dll
+- wajib online (hosting: infinityfree)
+- Tambahkan link ke blog/CMS
+
+Isi blog/CMS:
+  - Pembelajaran matematika
+  - minimal 3 page
+  - minimal 4 post
+
+
+Link Bahan :
+https://drive.google.com/drive/folders/1vIy2_1AbnNG4RequVyJr8dkQr7KKBP3H
+
+Catatan
+1. minimal 1 data base dengan minimal 2 dibuat dibagian refleksi (nanti dibuat kolom untuk mengisi jawaban)
+2. minimal ada 2 javascript (dibuat bagian quiz dan contoh soal)
+3. semua pake eksternal CSS
+4. tabel dibuat dalam pemrograman
+5. di gdrive sudah ada elemen² yg bantu pembuatan program
+6. ada contoh pemrograman quiz dan contoh soal, bisa dibuka di gdrive bagiaan 'PROGRAM'
+7. Bagian 'tentang' nanti kan ada foto dan biodatanya. foto sudah ada di bagian elemen sesuai namaanya, sedangkan biodatanya akan saya kirim setelah ini.
+8. Desain output yang kita inginkan akan saya kirim setelaah ini ya mas, tidak sama persis seperti itu tidak apa apa mas. yang penting input pemrogramannya memenuhi persyaratan dari dosen saya yang kemarin sudah saya kirim.
+9. color palete akan saya kirim setelah ini.
+10. apabila ada yg mau ditanyakaan ke saya tanya saja ya mas.
+11. semangat mengerjakan tugas mas!
+
+
+BIODATA
+1. Nama : Irene Chelsyana Febrianti
+NIM : K1321049
+TTL : Jepara, 19 Februari 2003
+Motto Hidup : kuat dilakoni, nek ora kuat yo dipekso kuat!
+
+2. Nama : Ira Septiana Marfi’a 
+NIM : K1321048
+TTL : Sragen, 16 September 2003
+Motto Hidup : Be Happy!!! ^^
+
+3. Nama : Widya Damayanti
+NIM : K1321078
+TTL : Magetan, 31 Mei 2003
+Motto Hidup : just let it flow
+
+4. Nama : Habib Nasyith Za'im Alfayyad
+NIM : K1319033
+TTL : Surakarta, 20 Agustus 2001
+Motto Hidup : Tenang , Kalem , Kuasai
