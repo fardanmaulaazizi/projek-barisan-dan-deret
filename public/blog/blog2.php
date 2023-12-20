@@ -22,11 +22,10 @@
         ><button class="btn btn-success bg-kuning">Login</button></a
       >
       <a href="../index.php" class="text-decoration-none"><h2 class="px-3 px-md-5 text-white">Blog Post</h2></a>
-      <div class="p-3 p-md-5 row" style="
-    margin-right: 0px;">
-        <a class="text-decoration-none col-md-12 mb-3"
-          ><div class="card bg-white p-3 h-100">
-            <h4 class="font-bold text-center">
+      <div class="p-3 p-md-5 row">
+        <a class="text-decoration-none col-md-8 items-center mb-3 mx-auto"
+          ><div class="card bg-white p-3 h-100 p-5">
+            <h4 class="font-bold text-center mb-4">
                 Belajar Bermakna Dalam Pembelajaran Matematika
             </h4>
             <p>Faktor yang paling menentukan pada proses pembelajaran adalah apa yang sudah diketahui siswa. Oleh karena irtu, siswa difasilitasi guru sehingga para siswa dapat mengkaitkan pengetahuan baru dengan pengetahuan lama yang sudah dipelajarinya. Ausubel lalu menyebut istilah belajar bermakna (meaningful learning) untuk pembelajaran yang dapat mengkaitkan pengetahuan baru dengan pengetahuan lama yang sudah dipelajarinya. Pentingnya pengetahuan prasyarat dan pentingnya siswa sendirilah yang membangun dan mengkonstruksi sendiri pengetahuan. Oleh karenanya, diharapkan peran guru sebagai fasilitator dan bukan pentransfer pengetahuan.</p>

@@ -18,15 +18,16 @@
         BARISAN & DERET
       </h1>
 
-      <a href="../login.php" class="ms-auto me-2"
+      <a href="../login.php" class="ms-auto me-5"
         ><button class="btn btn-success bg-kuning">Login</button></a
       >
-      <a href="../index.php" class="text-decoration-none"><h2 class="px-3 px-md-5 text-white">Blog Post</h2></a>
-      <div class="p-3 p-md-5 row" style="
-    margin-right: 0px;">
-        <a class="text-decoration-none col-md-12 mb-3"
-          ><div class="card bg-white p-3 h-100">
-            <h4 class="font-bold text-center">
+      <a href="../index.php" class="text-decoration-none"
+        ><h2 class="px-3 px-md-5 text-white">Blog Post</h2></a
+      >
+      <div class="p-3 p-md-5 row">
+        <a class="text-decoration-none col-md-8 mb-3 mx-auto"
+          ><div class="card bg-white h-100 mx-auto p-5">
+            <h4 class="font-bold text-center mb-4">
               Pembelajaran Matematika yang Menyenangkan
             </h4>
             <p>

@@ -1,3 +1,13 @@
+<?php
+session_start();
+if(!isset($_SESSION["id"])){
+  ?>
+<script>
+  document.location("login.php");
+</script>
+<?php
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,12 +24,12 @@
   </head>
   <body style="background-image: url(images/background.png)" class="100vh">
     <div class="flex flex-col h-screen">
-      <h1 class="text-3xl bg-hijau text-white font-bold mt-10 p-4 text-center">
+    <h1 class="text-3xl bg-hijau text-white font-bold text-center mt-10" style="padding: 10px 10px">
         CONTOH SOAL
       </h1>
-
-      <!--  end::navbar   -->
-      <div class="flex flex-1 overflow-hidden mt-5 pb-5">
+      <a href="./logout.php" class="ms-auto text-decoration-none" style="background-color: red; color: white; padding: 5px 10px; border-radius: 10%;">Logout</a>
+      <!--  end::navbar   --><!--  end::navbar   -->
+      <div class="flex flex-1 overflow-hidden mt-1 pb-5">
         <!--   start::Sidebar    -->
         <aside class="w-32 overflow-y-auto flex flex-col overflow-hidden">
           <a href="home.php" class="mb-2"

@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(!isset($_SESSION["id"])){
+  ?>
+    <script>
+      document.location("login.php")
+    </script>
+  <?php
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,7 +22,8 @@
       <h1 class="text-3xl bg-hijau text-white font-bold mt-10 p-4 text-center">
         BARISAN & DERET
       </h1>
-
+      
+      <a href="./logout.php" class="ms-auto me-5" style="background-color: red; color: white; padding: 5px 10px; border-radius: 10%; margin-top: 7px">Logout</a>
       <!--  end::navbar   -->
       <div class="flex flex-1 overflow-hidden mt-5 pb-5">
         <!--   start::Sidebar    -->

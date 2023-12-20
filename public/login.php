@@ -1,6 +1,13 @@
 <?php
   include "koneksi.php";
-
+  session_start();
+  if(isset($_SESSION["id"])){
+    ?>
+      <script>
+        document.location("home.php")
+      </script>
+    <?php
+  }
   if(isset($_POST["login"])){
     $email = $_POST["email"];
     $password = $_POST["password"];
@@ -8,6 +15,8 @@
     $query = mysqli_query($conn, "SELECT * FROM user WHERE email = '$email' AND password = '$password'");
     
     if (mysqli_num_rows($query) == true) {
+      $pengguna = mysqli_fetch_assoc($query);
+      $_SESSION["id"] = $pengguna["id"]
       ?>
         <script>
           alert("Login success")

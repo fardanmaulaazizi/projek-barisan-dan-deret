@@ -688,12 +688,24 @@ video {
   width: 8rem;
 }
 
-.w-40 {
-  width: 10rem;
-}
-
 .w-full {
   width: 100%;
+}
+
+.max-w-screen-md {
+  max-width: 768px;
+}
+
+.max-w-sm {
+  max-width: 24rem;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.max-w-xs {
+  max-width: 20rem;
 }
 
 .flex-1 {

@@ -1,6 +1,16 @@
 <?php
+  session_start();
+  if(!isset($_SESSION["id"])){
+    ?>
+      <script>
+        document.location("login")
+      </script>
+    <?php
+  }
   include "koneksi.php";
   $query =  mysqli_query($conn, "SELECT * FROM quiz");
+  $id = $_SESSION["id"];
+  $riwayatQuizPengguna = mysqli_query($conn, "SELECT * FROM riwayat_quiz WHERE id_user = $id");
 
   if(isset($_POST["selesai"])){
     $q1 = $_POST["q1"];
@@ -52,13 +62,14 @@
     if($q10 == $kunciJawaban[9]["kunci_jawaban"]){
       $jawabanBenar += 1;
     }
-
+    $tanggalHariIni = date("Y-m-d");
+    $query = mysqli_query($conn, "INSERT INTO `riwayat_quiz` (`id`, `tanggal`, `nilai`, `id_user`) VALUES (NULL, '$tanggalHariIni', '$jawabanBenar', '$id');")
     ?>
-      <script>
-        alert("Jawaban anda benar : <?= $jawabanBenar ?> soal")
-        document.location = 'quiz.php';
-      </script>
-    <?php
+<script>
+  alert("Jawaban anda benar : <?= $jawabanBenar ?> soal");
+  document.location = "quiz.php";
+</script>
+<?php
   }
 ?>
 
@@ -78,12 +89,12 @@
   </head>
   <body style="background-image: url(images/background.png)" class="100vh">
     <div class="flex flex-col h-screen">
-      <h1 class="text-3xl bg-hijau text-white font-bold mt-10 p-4 text-center">
-        Quiz
+      <h1 class="text-3xl bg-hijau text-white font-bold text-center mt-10" style="padding: 10px 10px">
+        QUIZ
       </h1>
-
+      <a href="./logout.php" class="ms-auto text-decoration-none" style="background-color: red; color: white; padding: 5px 10px; border-radius: 10%;">Logout</a>
       <!--  end::navbar   -->
-      <div class="flex flex-1 overflow-hidden mt-5 pb-5">
+      <div class="flex flex-1 overflow-hidden mt-1 pb-5">
         <!--   start::Sidebar    -->
         <aside class="w-32 overflow-y-auto flex flex-col overflow-hidden">
           <a href="home.php" class="mb-2"
@@ -116,11 +127,13 @@
         <main
           class="bg-hijau text-white flex-1 ms-5 overflow-y-auto paragraph me-5 p-3"
         >
-        <p id="countdown" class="text-center fixed end-3 bg-kuning" >Go</p>
+          <p id="countdown" class="text-center fixed bg-kuning">Go</p>
           <form action="quiz.php" id="quizForm" method="post" class="mt-4">
             <div alt="soal1" class="mb-3">
               <h4>No. 1</h4>
-              <p>1.	Perhatikan barisan bilangan berikut:<br>3, 7, 11, 15, …<br>Beda dari barisan aritmetika di atas adalah... 
+              <p>
+                1. Perhatikan barisan bilangan berikut:<br />3, 7, 11, 15, …<br />Beda
+                dari barisan aritmetika di atas adalah...
               </p>
               <div class="form-check">
                 <input
@@ -165,7 +178,9 @@
             </div>
             <div alt="soal2" class="mb-3">
               <h4>No. 2</h4>
-              <p>Diketahui barisan aritmetika: 5, 7, 9, 11,...<br>Suku ke-15 dari barisan tersebut adalah...
+              <p>
+                Diketahui barisan aritmetika: 5, 7, 9, 11,...<br />Suku ke-15
+                dari barisan tersebut adalah...
               </p>
               <div class="form-check">
                 <input
@@ -210,7 +225,10 @@
             </div>
             <div alt="soal3" class="mb-3">
               <h4>No. 3</h4>
-              <p>Jika suku ketiga dan ketujuh suatu barisan aritmetika adalah 11 dan 19. Maka suku ke-11 dari barisan tersebut adalah...</p>
+              <p>
+                Jika suku ketiga dan ketujuh suatu barisan aritmetika adalah 11
+                dan 19. Maka suku ke-11 dari barisan tersebut adalah...
+              </p>
               <div class="form-check">
                 <input
                   class="form-check-input"
@@ -254,7 +272,10 @@
             </div>
             <div alt="soal4" class="mb-3">
               <h4>No. 4</h4>
-              <p>Diketahui suatu barisan aritmetika dengan U2=8 dan U6=20. Jumlah 6 suku pertama barisan tersebut adalah...</p>
+              <p>
+                Diketahui suatu barisan aritmetika dengan U2=8 dan U6=20. Jumlah
+                6 suku pertama barisan tersebut adalah...
+              </p>
               <div class="form-check">
                 <input
                   class="form-check-input"
@@ -308,7 +329,11 @@
             </div>
             <div alt="soal5" class="mb-3">
               <h4>No. 5</h4>
-              <p>Panjang sisi sebuah segitiga siku-siku membentuk barisan aritmetika. Jika keliling segitiga tersebut adalah 72, luasnya adalah...</p>
+              <p>
+                Panjang sisi sebuah segitiga siku-siku membentuk barisan
+                aritmetika. Jika keliling segitiga tersebut adalah 72, luasnya
+                adalah...
+              </p>
               <div class="form-check">
                 <input
                   class="form-check-input"
@@ -362,7 +387,10 @@
             </div>
             <div alt="soal6" class="mb-3">
               <h4>No. 6</h4>
-              <p>Barisan 1, 3, 9, 27, …. Membentuk deret geometri. Rasio barisan itu adalah ...</p>
+              <p>
+                Barisan 1, 3, 9, 27, …. Membentuk deret geometri. Rasio barisan
+                itu adalah ...
+              </p>
               <div class="form-check">
                 <input
                   class="form-check-input"
@@ -416,7 +444,10 @@
             </div>
             <div alt="soal7" class="mb-3">
               <h4>No. 7</h4>
-              <p>Barisan 1, 3, 9, 27,... membentuk deret geometri. Suku ke-5 adalah ...</p>
+              <p>
+                Barisan 1, 3, 9, 27,... membentuk deret geometri. Suku ke-5
+                adalah ...
+              </p>
               <div class="form-check">
                 <input
                   class="form-check-input"
@@ -470,7 +501,11 @@
             </div>
             <div alt="soal8" class="mb-3">
               <h4>No. 8</h4>
-              <p>Selembar kertas dipotong menjadi dua bagian. Setiap bagian dipotong menjadi dua dan seterusnya. Jumlah potongan kertas setelah potongan kelima sama dengan...</p>
+              <p>
+                Selembar kertas dipotong menjadi dua bagian. Setiap bagian
+                dipotong menjadi dua dan seterusnya. Jumlah potongan kertas
+                setelah potongan kelima sama dengan...
+              </p>
               <div class="form-check">
                 <input
                   class="form-check-input"
@@ -524,7 +559,11 @@
             </div>
             <div alt="soal9" class="mb-3">
               <h4>No. 9</h4>
-              <p>Pada sebuah deret geometri diketahui bahwa suku pertamanya adalah 3 dan suku ke-9 adalah 768. Suku ke-7 deret tersebut adalah...</p>
+              <p>
+                Pada sebuah deret geometri diketahui bahwa suku pertamanya
+                adalah 3 dan suku ke-9 adalah 768. Suku ke-7 deret tersebut
+                adalah...
+              </p>
               <div class="form-check">
                 <input
                   class="form-check-input"
@@ -578,7 +617,11 @@
             </div>
             <div alt="soal10" class="mb-3">
               <h4>No. 10</h4>
-              <p>Diketahui suku ke-5 dari barisan geometri adalah 243, hasil bagi suku ke-9 dengan suku ke-6 adalah 27. Suku ke-2 dari barisan tersebut adalah...</p>
+              <p>
+                Diketahui suku ke-5 dari barisan geometri adalah 243, hasil bagi
+                suku ke-9 dengan suku ke-6 adalah 27. Suku ke-2 dari barisan
+                tersebut adalah...
+              </p>
               <div class="form-check">
                 <input
                   class="form-check-input"
@@ -630,16 +673,51 @@
                 <label class="form-check-label"> (E) 163</label>
               </div>
             </div>
-            <button
-              type="submit"
-              class="bg-kuning p-1 mt-3"
-              name="selesai"
-            >
+            <button type="submit" class="bg-kuning p-1 mt-3" name="selesai">
               Selesai
             </button>
           </form>
         </main>
+        <div class="">
+        <button
+              type="button"
+              class="bg-hijau p-1"
+              data-bs-toggle="modal"
+              data-bs-target="#soal1"
+            >
+              Riwayat Quiz
+            </button>
+            <div
+              class="modal fade"
+              id="soal1"
+              tabindex="-1"
+              aria-labelledby="soal1Label"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <table class="w-full table">
+                      <tr>
+                        <th>No</th>
+                        <th>Tanggal</th>
+                        <th>Benar</th>
+                      </tr>
+                      <?php $i = 1; while($data = mysqli_fetch_assoc($riwayatQuizPengguna)){ ?>
+                      <tr>
+                        <td><?= $i ?></td>
+                        <td><?= $data["tanggal"] ?></td>
+                        <td><?= $data["nilai"]?>/10</td>
+                      </tr>
+                      <?php $i++; }?>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
+     
     </div>
     <script src="js/quiz.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
